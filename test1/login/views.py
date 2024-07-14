@@ -4,10 +4,20 @@ from . import models
 # Create your views here.
 
 def Login(request):
+    """
+    #register
     product1 = models.product(name="noshabe", price=100, quantity= 100)
     product1.save()
-    return render(request, 'index.html')
+    #update
+    product.name = "chips"
+    product.price = 250
+    product.save()
+    """
+    products = models.product.objects.all()
+    product = models.product.objects.filter(id=2).first()
+    # product.delete()
 
+    return render(request, 'index.html', context={'products':products})
 def test(request):
     return render(request, 'test.html')
 
