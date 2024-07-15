@@ -12,14 +12,19 @@
 
 <div class="container">
   <h2>Vertical (basic) form</h2>
-  <form action="/action_page.php">
+  <form action="login/create/" method="post">
+    {% csrf_token %}
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <label for="name">name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+      <label for="price">price:</label>
+      <input type="text" class="form-control" id="price" placeholder="Enter price" name="price">
+    </div>
+    <div class="form-group">
+      <label for="quantity">quantity:</label>
+      <input type="text" class="form-control" id="quantity" placeholder="Enter quantity" name="quantity">
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
